@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StatisticsWrapper, Title, Statistic } from './Statistics.styled';
+import {
+  StatisticsWrapper,
+  Title,
+  Statistic,
+  StatisticAmount,
+} from './Statistics.styled';
 
 export class Statistics extends React.Component {
   render() {
@@ -8,12 +13,23 @@ export class Statistics extends React.Component {
     return (
       <StatisticsWrapper>
         <Title>Statistics</Title>
-        <Statistic>Good: {good}</Statistic>
-        <Statistic>Neutral: {neutral}</Statistic>
-        <Statistic>Bad: {bad}</Statistic>
-        <Statistic>Total: {total}</Statistic>
         <Statistic>
-          Positive feedback: {total > 0 ? positivePercentage : 0}%
+          Good: <StatisticAmount> {good}</StatisticAmount>
+        </Statistic>
+        <Statistic>
+          Neutral: <StatisticAmount>{neutral}</StatisticAmount>
+        </Statistic>
+        <Statistic>
+          Bad: <StatisticAmount>{bad}</StatisticAmount>
+        </Statistic>
+        <Statistic>
+          Total: <StatisticAmount>{total}</StatisticAmount>
+        </Statistic>
+        <Statistic>
+          Positive feedback:{' '}
+          <StatisticAmount>
+            {total > 0 ? positivePercentage : 0}%
+          </StatisticAmount>
         </Statistic>
       </StatisticsWrapper>
     );

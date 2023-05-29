@@ -15,3 +15,8 @@ export const Statistic = styled.p`
   color: #666;
   font-weight: 700;
 `;
+
+export const StatisticAmount = styled.span`
+  color: violet;
+  font-weight: 700;
+`;
